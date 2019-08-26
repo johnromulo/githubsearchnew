@@ -6,9 +6,13 @@ import { searchSuccess, searchFailure } from './actions';
 
 export function* searchProfile({ payload }) {
   try {
-    const { user_name } = payload.data;
+    const { username } = payload;
 
-    const response = yield call(api.get, `users/${user_name}`);
+    const response = yield call(
+      api.get,
+      `users/${username}/repos?page=1&per_page=30`
+    );
+    // console.log(response.headers.link);
 
     yield put(searchSuccess(response.data));
   } catch (error) {

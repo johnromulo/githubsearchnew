@@ -1,14 +1,14 @@
-export function searchRequest(data) {
+export function searchRequest(username) {
   return {
     type: '@repository/SEARCH_REQUEST',
-    payload: { data },
+    payload: { username },
   };
 }
 
-export function searchSuccess(data) {
+export function searchSuccess(repositories) {
   return {
     type: '@repository/SEARCH_SUCCESS',
-    payload: { data },
+    payload: { repositories },
   };
 }
 

@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-  data: null,
+  data: {},
 };
 
 export default function user(state = INITIAL_STATE, action) {

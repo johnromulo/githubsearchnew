@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Logo from '~/components/Logo';
-import Search from '~/components/Search';
-import { Container } from './styles';
+import { Container, Logo, Search } from './styles';
 
 export default function Home({ history }) {
   const [username, setUsername] = useState('');
@@ -15,14 +13,11 @@ export default function Home({ history }) {
 
   return (
     <Container>
-      <Logo size="60px" />
+      <Logo />
       <Search
         handleSubmit={handleSubmit}
         username={username}
         setUsername={setUsername}
-        styles={{
-          width: '580px',
-        }}
       />
     </Container>
   );

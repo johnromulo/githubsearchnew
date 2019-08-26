@@ -1,22 +1,20 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-  repositories: [],
+  data: [],
+  page: 1,
+  last: false,
 };
 
 export default function user(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
-      case '@repository/SEARCH_REQUEST': {
-        draft.repositories = [];
-        break;
-      }
       case '@repository/SEARCH_SUCCESS': {
-        draft.repositories = [];
+        draft.data = action.payload.repositories;
         break;
       }
       case '@repository/SEARCH_FAILURE': {
-        draft.repositories = [];
+        draft.data = [];
         break;
       }
       default:

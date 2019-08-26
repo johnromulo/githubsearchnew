@@ -6,8 +6,10 @@ import { profileSuccess, profileFailure } from './actions';
 
 export function* getProfile({ payload }) {
   try {
+    // const profile = yield select(state => state.profile);
     const { username } = payload;
 
+    // if (profile && profile.login !== username) {
     const response = yield call(api.get, `users/${username}`);
 
     yield put(profileSuccess(response.data));

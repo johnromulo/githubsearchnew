@@ -1,4 +1,16 @@
 import styled from 'styled-components';
+import LogoDefalut from '~/components/Logo';
+import SearchDefalut from '~/components/Search';
+
+export const Logo = styled(LogoDefalut).attrs({
+  size: '40px',
+})``;
+
+export const Search = styled(SearchDefalut).attrs({
+  styles: {
+    width: '940px',
+  },
+})``;
 
 export const Container = styled.div`
   flex: 1;
@@ -23,7 +35,6 @@ export const Container = styled.div`
   }
 
   main {
-    background: blue;
     grid-area: main;
   }
 `;
