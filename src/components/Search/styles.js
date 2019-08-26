@@ -13,7 +13,7 @@ export const Container = styled.div`
 
       input {
         margin: 20px;
-        width: 580px;
+        width: ${props => props.styles.width};
         padding: 12px;
         border-radius: 5px;
         border: 1px solid #dfe1e5;
@@ -33,6 +33,7 @@ export const Container = styled.div`
         border: 0;
         border-radius: 5px;
         background-color: #28a745;
+        height: 42px;
 
         &:hover {
           background: ${darken(0.06, '#28a745')};

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Logo from '~/components/Logo';
 import Search from '~/components/Search';
+import Profile from '~/components/Profile';
 import { profileRequest } from '~/store/modules/profile/actions';
 import { Container } from './styles';
 
@@ -26,26 +27,18 @@ export default function Detail({ match, history }) {
   return (
     <Container>
       <header>
-        <Logo />
+        <Logo size="40px" />
         <Search
+          styles={{
+            width: '940px',
+          }}
           handleSubmit={handleSubmit}
           username={username}
           setUsername={setUsername}
         />
       </header>
       <aside>
-        <img
-          src="https://avatarfiles.alphacoders.com/138/138947.png"
-          alt="avalar"
-        />
-        <h1>Thanos</h1>
-        <h2>titanlouco</h2>
-        <ul>
-          <li>Infinite War</li>
-          <li>Infinite War</li>
-          <li>Infinite War</li>
-          <li>Infinite War</li>
-        </ul>
+        <Profile profile={profile} />
       </aside>
       <main> main </main>
     </Container>

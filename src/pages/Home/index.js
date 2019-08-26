@@ -15,11 +15,14 @@ export default function Home({ history }) {
 
   return (
     <Container>
-      <Logo />
+      <Logo size="60px" />
       <Search
         handleSubmit={handleSubmit}
         username={username}
         setUsername={setUsername}
+        styles={{
+          width: '580px',
+        }}
       />
     </Container>
   );
