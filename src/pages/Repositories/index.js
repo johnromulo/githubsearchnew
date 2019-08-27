@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -14,14 +14,20 @@ export default function Repositories({ match }) {
   const repositories = useSelector(state => state.repositories.data);
   const last = useSelector(state => state.repositories.last);
 
-  function handleRepos() {
+  const handleRepos = useCallback(() => {
     const { filter } = match.params;
     dispatch(searchRequest(filter));
-  }
+  }, [dispatch, match.params]);
+
+  useEffect(() => {
+    handleRepos();
+  }, [handleRepos]);
 
   return (
     <InfiniteScroll
-      pageStart={0}
+      pageStart={1}
+      initialLoad={false}
+      isReverse={false}
       loadMore={handleRepos}
       hasMore={!last}
       loader={<div key={0}>Loading ...</div>}
