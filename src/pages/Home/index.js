@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Container, Logo, Search } from './styles';
+// import Loading from '~/components/Loading';
 
 export default function Home({ history }) {
   const [username, setUsername] = useState('');
