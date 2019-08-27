@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 import { Container, Logo, Search } from './styles';
 // import Loading from '~/components/Loading';
@@ -20,6 +21,7 @@ export default function Home({ history }) {
         username={username}
         setUsername={setUsername}
       />
+      <PulseLoader sizeUnit="px" size={20} color="red" loading />
     </Container>
   );
 }
