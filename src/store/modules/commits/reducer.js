@@ -6,22 +6,22 @@ const INITIAL_STATE = {
   last: false,
 };
 
-export default function repositories(state = INITIAL_STATE, action) {
+export default function commit(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
-      case '@repository/SEARCH_INITIAL_STATE': {
+      case '@commits/SEARCH_INITIAL_STATE': {
         draft.data = [];
         draft.last = false;
         draft.page = 1;
         break;
       }
-      case '@repository/SEARCH_SUCCESS': {
-        draft.data = draft.data.concat(action.payload.repositories);
+      case '@commits/SEARCH_SUCCESS': {
+        draft.data = draft.data.concat(action.payload.commits);
         draft.page += 1;
         draft.last = action.payload.last;
         break;
       }
-      case '@repository/SEARCH_FAILURE': {
+      case '@commits/SEARCH_FAILURE': {
         draft.data = [];
         draft.last = true;
         break;

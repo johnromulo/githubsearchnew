@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 import Profile from '~/components/Profile';
 import { profileRequest } from '~/store/modules/profile/actions';
-import { searchResetState } from '~/store/modules/repository/actions';
+import { repositoriesResetState } from '~/store/modules/repository/actions';
+import { commitsResetState } from '~/store/modules/commits/actions';
 
 import { Container, Logo, Search } from './styles';
 
@@ -17,7 +18,8 @@ export default function Detail({ match, history, children }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    dispatch(searchResetState());
+    dispatch(repositoriesResetState());
+    dispatch(commitsResetState());
     history.push(`/${username}`);
   }
 

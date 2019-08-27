@@ -12,7 +12,7 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={Home} />
       <RouteDetail path="/:filter" exact component={Repositories} />
-      <RouteDetail path="/:filter/commits" component={Commits} />
+      <RouteDetail path="/:filter/:repo/commits" component={Commits} />
     </Switch>
   );
 }

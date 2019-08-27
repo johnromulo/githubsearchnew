@@ -1,23 +1,24 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import { GoStar } from 'react-icons/go';
 import { Container } from './styles';
 
-import { searchRequest } from '~/store/modules/repository/actions';
+import { repositoriesRequest } from '~/store/modules/repository/actions';
 
 export default function Repositories({ match }) {
   const dispatch = useDispatch();
 
   const repositories = useSelector(state => state.repositories.data);
   const last = useSelector(state => state.repositories.last);
+  const { filter } = match.params;
 
   const handleRepos = useCallback(() => {
-    const { filter } = match.params;
-    dispatch(searchRequest(filter));
-  }, [dispatch, match.params]);
+    dispatch(repositoriesRequest(filter));
+  }, [dispatch, filter]);
 
   useEffect(() => {
     handleRepos();
@@ -34,11 +35,13 @@ export default function Repositories({ match }) {
     >
       {repositories.map(repo => (
         <Container key={repo.id}>
-          <h1>{repo.name}</h1>
-          <h3>{repo.description}</h3>
-          <span>
-            <GoStar size={24} /> {repo.stargazers_count}
-          </span>
+          <Link to={`/${filter}/${repo.name}/commits`}>
+            <h1>{repo.name}</h1>
+            <h3>{repo.description}</h3>
+            <span>
+              <GoStar size={24} /> {repo.stargazers_count}
+            </span>
+          </Link>
         </Container>
       ))}
     </InfiniteScroll>

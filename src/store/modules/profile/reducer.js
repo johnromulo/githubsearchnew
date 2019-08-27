@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   data: {},
 };
 
-export default function user(state = INITIAL_STATE, action) {
+export default function profile(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
       case '@profile/PROFILE_SUCCESS': {
