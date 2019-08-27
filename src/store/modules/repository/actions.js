@@ -5,10 +5,10 @@ export function searchRequest(username) {
   };
 }
 
-export function searchSuccess(repositories) {
+export function searchSuccess(repositories, last) {
   return {
     type: '@repository/SEARCH_SUCCESS',
-    payload: { repositories },
+    payload: { repositories, last },
   };
 }
 

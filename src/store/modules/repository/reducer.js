@@ -10,7 +10,9 @@ export default function user(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
       case '@repository/SEARCH_SUCCESS': {
-        draft.data = action.payload.repositories;
+        draft.data = draft.data.concat(action.payload.repositories);
+        draft.page += 1;
+        draft.last = action.payload.last;
         break;
       }
       case '@repository/SEARCH_FAILURE': {

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import { GoStar } from 'react-icons/go';
 import { Container } from './styles';
@@ -11,14 +12,20 @@ export default function Repositories({ match }) {
   const dispatch = useDispatch();
 
   const repositories = useSelector(state => state.repositories.data);
+  const last = useSelector(state => state.repositories.last);
 
-  useEffect(() => {
+  function handleRepos() {
     const { filter } = match.params;
     dispatch(searchRequest(filter));
-  }, [dispatch, match.params]);
+  }
 
   return (
-    <>
+    <InfiniteScroll
+      pageStart={0}
+      loadMore={handleRepos}
+      hasMore={!last}
+      loader={<div key={0}>Loading ...</div>}
+    >
       {repositories.map(repo => (
         <Container key={repo.id}>
           <h1>{repo.name}</h1>
@@ -28,7 +35,7 @@ export default function Repositories({ match }) {
           </span>
         </Container>
       ))}
-    </>
+    </InfiniteScroll>
   );
 }
 
