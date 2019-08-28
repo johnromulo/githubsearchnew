@@ -1,18 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Container } from './styles';
 
-export default function Logo({ size }) {
+export default function Logo() {
   return (
-    <Container size={size}>
+    <Container>
       <strong>
         Github <span>Search</span>
       </strong>
     </Container>
   );
 }
-
-Logo.propTypes = {
-  size: PropTypes.string.isRequired,
-};

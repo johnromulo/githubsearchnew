@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import { GoStar } from 'react-icons/go';
+import Loading from '~/components/Loading';
 import { Container } from './styles';
-
 import { repositoriesRequest } from '~/store/modules/repository/actions';
 
 export default function Repositories({ match }) {
@@ -31,15 +31,14 @@ export default function Repositories({ match }) {
       isReverse={false}
       loadMore={handleRepos}
       hasMore={!last}
-      loader={<div key={0}>Loading ...</div>}
+      loader={<Loading key={0} loading />}
     >
       {repositories.map(repo => (
         <Container key={repo.id}>
           <Link to={`/${filter}/${repo.name}/commits`}>
             <h1>{repo.name}</h1>
-            <h3>{repo.description}</h3>
             <span>
-              <GoStar size={24} /> {repo.stargazers_count}
+              <GoStar size={16} /> {repo.stargazers_count}
             </span>
           </Link>
         </Container>

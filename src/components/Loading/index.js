@@ -1,7 +1,11 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, PulseLoader } from './styles';
 
 export default function Loading() {
-  return <Container />;
+  return (
+    <Container>
+      <PulseLoader loading />
+    </Container>
+  );
 }

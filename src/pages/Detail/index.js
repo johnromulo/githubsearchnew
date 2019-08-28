@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Profile from '~/components/Profile';
+import Logo from '~/components/Logo';
+import Search from '~/components/Search';
+
 import { profileRequest } from '~/store/modules/profile/actions';
 import { repositoriesResetState } from '~/store/modules/repository/actions';
 import { commitsResetState } from '~/store/modules/commits/actions';
 
-import { Container, Logo, Search } from './styles';
+import { Container } from './styles';
 
 export default function Detail({ match, history, children }) {
   const dispatch = useDispatch();
