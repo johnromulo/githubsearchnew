@@ -25,25 +25,25 @@ export default function Repositories({ match }) {
   }, [handleRepos]);
 
   return (
-    <InfiniteScroll
-      pageStart={1}
-      initialLoad={false}
-      isReverse={false}
-      loadMore={handleRepos}
-      hasMore={!last}
-      loader={<Loading key={0} loading />}
-    >
-      {repositories.map(repo => (
-        <Container key={repo.id}>
-          <Link to={`/${filter}/${repo.name}/commits`}>
+    <Container>
+      <InfiniteScroll
+        pageStart={1}
+        initialLoad={false}
+        isReverse={false}
+        loadMore={handleRepos}
+        hasMore={!last}
+        loader={<Loading key={0} loading />}
+      >
+        {repositories.map(repo => (
+          <Link to={`/${filter}/${repo.name}/commits`} key={repo.id}>
             <h1>{repo.name}</h1>
             <span>
               <GoStar size={16} /> {repo.stargazers_count}
             </span>
           </Link>
-        </Container>
-      ))}
-    </InfiniteScroll>
+        ))}
+      </InfiniteScroll>
+    </Container>
   );
 }
 

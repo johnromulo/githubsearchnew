@@ -8,7 +8,6 @@ import Search from '~/components/Search';
 
 import { profileRequest } from '~/store/modules/profile/actions';
 import { repositoriesResetState } from '~/store/modules/repository/actions';
-import { commitsResetState } from '~/store/modules/commits/actions';
 
 import { Container } from './styles';
 
@@ -22,7 +21,6 @@ export default function Detail({ match, history, children }) {
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(repositoriesResetState());
-    dispatch(commitsResetState());
     history.push(`/${username}`);
   }
 
