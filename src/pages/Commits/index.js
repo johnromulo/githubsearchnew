@@ -26,7 +26,7 @@ export default function Commits({ match }) {
     dispatch(commitsResetState());
     handleCommits();
   }, [dispatch, handleCommits]);
-
+  // <img src={record.picture} onError={(e)=>{e.target.onerror = null; e.target.src="image_path_here"}}/>
   return (
     <Container>
       <InfiniteScroll
