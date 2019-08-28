@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 45px;
+  font-size: 25px;
   strong {
     font-weight: normal;
     color: #24292e;

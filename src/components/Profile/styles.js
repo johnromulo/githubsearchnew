@@ -23,7 +23,7 @@ export const Container = styled.div`
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      border: 4px solid #fff;
+      border: 5px solid #fff;
       background: #fff;
     }
   }
