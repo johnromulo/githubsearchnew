@@ -26,6 +26,11 @@ export default function Detail({ match, history, children }) {
 
   useEffect(() => {
     const { filter } = match.params;
+    setUsername(filter);
+  }, [match.params]);
+
+  useEffect(() => {
+    const { filter } = match.params;
     dispatch(profileRequest(filter));
   }, [dispatch, match.params]);
 

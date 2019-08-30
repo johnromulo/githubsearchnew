@@ -6,7 +6,7 @@ export const Container = styled.div`
   font-size: 25px;
   strong {
     font-weight: normal;
-    color: #24292e;
+    color: #fff;
 
     span {
       font-weight: 200;

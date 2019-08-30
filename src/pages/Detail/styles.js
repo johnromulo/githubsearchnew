@@ -11,7 +11,6 @@ export const Container = styled.div`
   margin-bottom: 40px;
 
   header {
-    background: #4f4f4f;
     grid-area: header;
     display: flex;
     flex-direction: row;

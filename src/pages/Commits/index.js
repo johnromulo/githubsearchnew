@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
+import Image from '~/components/Image';
 import Loading from '~/components/Loading';
 import {
   commitsRequest,
@@ -39,7 +40,7 @@ export default function Commits({ match }) {
       >
         {commits.map(cmt => (
           <article key={cmt.sha}>
-            <img
+            <Image
               src={
                 cmt.author && cmt.author.avatar_url ? cmt.author.avatar_url : ''
               }

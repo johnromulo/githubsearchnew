@@ -32,6 +32,7 @@ export default function Repositories({ match }) {
         isReverse={false}
         loadMore={handleRepos}
         hasMore={!last}
+        // getScrollParent={() => scrollParentRefref}
         loader={<Loading key={0} loading />}
       >
         {repositories.map(repo => (

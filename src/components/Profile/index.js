@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GoLocation, GoPackage, GoOrganization } from 'react-icons/go';
 
+import Image from '~/components/Image';
 import { Container } from './styles';
 
 export default function Profile({ profile }) {
   return (
     profile && (
       <Container>
-        <div>
-          <img src={profile.avatar_url} alt={profile.name} />
-        </div>
+        <Image src={profile.avatar_url} alt={profile.login} />
         <h1>{profile.name}</h1>
         <h2>@{profile.login}</h2>
         <ul>

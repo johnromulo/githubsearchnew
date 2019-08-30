@@ -24,6 +24,11 @@ export const Container = styled.div`
           width: 360px;
           padding: 12px;
         }
+
+        ::placeholder {
+          font-weight: bold;
+          text-align: center;
+        }
       }
     }
   }
