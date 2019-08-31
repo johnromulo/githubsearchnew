@@ -27,11 +27,11 @@ export const Container = styled.div`
     grid-area: main;
     padding-right: 28px;
 
-    > div {
+    /* > div {
       grid-area: main;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
-    }
+    } */
   }
 `;

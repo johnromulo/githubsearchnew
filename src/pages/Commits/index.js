@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
+import Loading from '~/components/Loading';
+
 import { commitsRequest } from '~/store/modules/commits/actions';
 
 import { Container } from './styles';
@@ -29,7 +31,7 @@ export default function Commits({ match }) {
       isReverse={false}
       loadMore={handleCommits}
       hasMore={!last}
-      loader={<div key={0}>Loading ...</div>}
+      loader={<Loading key={0} loading />}
     >
       {commits.map(cmt => (
         <Container key={cmt.sha}>
