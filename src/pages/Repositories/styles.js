@@ -2,45 +2,50 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   > div {
-    grid-area: main;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 
     > div {
-      padding: 8px;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      &:hover {
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-      }
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
 
-      a {
-        color: #5c5c5c;
-      }
+  a {
+    background: rgb(40, 48, 66);
+    color: #5c5c5c;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    &:hover {
+      box-shadow: 0 6px 6px rgba(0, 0, 0, 0.36);
+      /* 0 -4px 0px 0px rgb(255, 1, 93); */
+    }
 
-      h1 {
-        font-size: 26px;
-        font-weight: 300;
-        color: #28a745;
-      }
+    h1 {
+      font-size: 20px;
+      font-weight: 300;
+      color: #fff;
+    }
 
-      h3 {
-        font-size: 16px;
-        font-weight: 300;
-      }
+    h3 {
+      font-size: 14px;
+      font-weight: 300;
+    }
 
-      span {
-        font-size: 16px;
-        font-weight: 300;
-        margin-top: 11px;
-        display: flex;
-        align-items: center;
+    span {
+      font-size: 16px;
+      font-weight: 300;
+      margin-top: 11px;
+      display: flex;
+      align-items: center;
+      color: #fff;
 
-        svg {
-          margin-right: 7px;
-        }
+      svg {
+        color: #fff;
+        margin-right: 7px;
       }
     }
   }

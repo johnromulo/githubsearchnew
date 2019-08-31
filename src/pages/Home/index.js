@@ -11,19 +11,6 @@ export default function Home({ history }) {
   function handleSubmit(event) {
     event.preventDefault();
     history.push(`/${username}`);
-    const state = {
-      liked: false,
-      dislaked: false,
-      countLike: 100,
-      countDislike: 25,
-    };
-
-    const teste = {
-      countLike: !liked ,
-      countDislike: liked ? countDislike + 1 : countDislike - 1,
-      liked: !liked,
-      dislaked: false,
-    };
   }
 
   return (

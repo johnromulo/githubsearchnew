@@ -32,17 +32,16 @@ export default function Repositories({ match }) {
         isReverse={false}
         loadMore={handleRepos}
         hasMore={!last}
+        // getScrollParent={() => scrollParentRefref}
         loader={<Loading key={0} loading />}
       >
         {repositories.map(repo => (
-          <div key={repo.id}>
-            <Link to={`/${filter}/${repo.name}/commits`}>
-              <h1>{repo.name}</h1>
-              <span>
-                <GoStar size={16} /> {repo.stargazers_count}
-              </span>
-            </Link>
-          </div>
+          <Link to={`/${filter}/${repo.name}/commits`} key={repo.id}>
+            <h1>{repo.name}</h1>
+            <span>
+              <GoStar size={16} /> {repo.stargazers_count}
+            </span>
+          </Link>
         ))}
       </InfiniteScroll>
     </Container>

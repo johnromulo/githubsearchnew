@@ -12,15 +12,25 @@ export const Container = styled.div`
 
       input {
         margin: 20px;
-        width: 360px;
-        padding: 12px;
-        border-radius: 5px;
-        border: 1px solid #dfe1e5;
+        width: 235px;
+        padding: 10px;
+        background: #283042;
+        border-radius: 10px;
+        border: 3px solid #283042;
+        transition: all 0.25s ease-in;
+        font-weight: bold;
+        color: #868686;
 
-        &:hover,
         &:focus {
           box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.2);
-          border-color: rgba(223, 225, 229, 0);
+          border-color: #283042;
+          width: 315px;
+          padding: 12px;
+          background: #fff;
+        }
+
+        ::placeholder {
+          font-weight: bold;
         }
       }
     }

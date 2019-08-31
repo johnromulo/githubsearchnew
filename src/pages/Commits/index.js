@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
+import Image from '~/components/Image';
 import Loading from '~/components/Loading';
-
-import { commitsRequest } from '~/store/modules/commits/actions';
+import {
+  commitsRequest,
+  commitsResetState,
+} from '~/store/modules/commits/actions';
 
 import { Container } from './styles';
 
@@ -21,26 +24,37 @@ export default function Commits({ match }) {
   }, [dispatch, filter, repo]);
 
   useEffect(() => {
+    dispatch(commitsResetState());
     handleCommits();
-  }, [handleCommits]);
-
+  }, [dispatch, handleCommits]);
+  // <img src={record.picture} onError={(e)=>{e.target.onerror = null; e.target.src="image_path_here"}}/>
   return (
-    <InfiniteScroll
-      pageStart={1}
-      initialLoad={false}
-      isReverse={false}
-      loadMore={handleCommits}
-      hasMore={!last}
-      loader={<Loading key={0} loading />}
-    >
-      {commits.map(cmt => (
-        <Container key={cmt.sha}>
-          <h1>{cmt.commit.message}</h1>
-          <h3>{cmt.commit.author.name}</h3>
-          <span>{cmt.commit.author.date}</span>
-        </Container>
-      ))}
-    </InfiniteScroll>
+    <Container>
+      <InfiniteScroll
+        pageStart={1}
+        initialLoad={false}
+        isReverse={false}
+        loadMore={handleCommits}
+        hasMore={!last}
+        loader={<Loading key={0} loading />}
+      >
+        {commits.map(cmt => (
+          <article key={cmt.sha}>
+            <Image
+              src={
+                cmt.author && cmt.author.avatar_url
+                  ? cmt.author.avatar_url
+                  : 'nouser'
+              }
+              alt={cmt.author && cmt.author.login ? cmt.author.login : 'nouser'}
+            />
+            <p>{cmt.commit.message}</p>
+            <h1>{cmt.commit.author.name}</h1>
+            <span>{cmt.commit.author.date}</span>
+          </article>
+        ))}
+      </InfiniteScroll>
+    </Container>
   );
 }
 

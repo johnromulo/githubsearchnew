@@ -1,31 +1,41 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  color: #5c5c5c;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(40, 48, 66);
+  padding: 20px 0;
 
   img {
-    width: 280px;
-    height: 280px;
-    border-radius: 2px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    /* position: absolute; */
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    background: #fff;
+    margin-bottom: 12px;
   }
 
   h1 {
     font-weight: 300;
-    font-size: 35px;
-    color: #000;
-    margin: 12px 0 7px 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 4px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 300;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
   }
 
   li {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
 

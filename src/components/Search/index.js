@@ -11,6 +11,7 @@ export default function Search({ handleSubmit, setUsername, username }) {
           <input
             type="text"
             onChange={e => setUsername(e.target.value)}
+            placeholder="Enter with your github username"
             value={username}
           />
         </div>

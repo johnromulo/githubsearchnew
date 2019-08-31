@@ -1,7 +1,10 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-  data: {},
+  data: {
+    avatar_url: '',
+    login: '',
+  },
 };
 
 export default function profile(state = INITIAL_STATE, action) {
@@ -12,7 +15,7 @@ export default function profile(state = INITIAL_STATE, action) {
         break;
       }
       case '@profile/PROFILE_FAILURE': {
-        draft.data = null;
+        draft.data = INITIAL_STATE;
         break;
       }
       default:
