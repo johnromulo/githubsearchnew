@@ -14,6 +14,11 @@ export function* searchCommits({ payload }) {
       `repos/${username}/${reponame}/commits?page=${page}&per_page=20`
     );
 
+    // const response = yield call(
+    //   api.get,
+    //   `search/commits?q=repo:${username}/${reponame}&page=${page}&per_page=30`
+    // );
+
     const last = response.data.length < 20;
 
     yield put(commitsSuccess(response.data, last));

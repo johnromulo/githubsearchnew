@@ -18,6 +18,7 @@ export const Container = styled.div`
     border: 4px solid #fff;
     background: #fff;
     margin-bottom: 12px;
+    background: yellow;
   }
 
   h1 {

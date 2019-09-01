@@ -11,10 +11,10 @@ export function repositoriesResetState() {
   };
 }
 
-export function repositoriesSuccess(repositories, last) {
+export function repositoriesSuccess(repositories, last, total_pages) {
   return {
     type: '@repository/SEARCH_SUCCESS',
-    payload: { repositories, last },
+    payload: { repositories, last, total_pages },
   };
 }
 

@@ -30,6 +30,7 @@ export const Container = styled.div`
       border-radius: 50%;
       position: absolute;
       top: -25px;
+      background: yellow;
     }
 
     p {
