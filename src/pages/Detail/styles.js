@@ -7,7 +7,8 @@ export const Container = styled.div`
   grid-template-columns: 0.5fr 2fr;
   grid-template-areas:
     'header header'
-    'aside main';
+    'aside main'
+    'notfound  notfound';
   margin-bottom: 40px;
 
   header {
@@ -26,5 +27,12 @@ export const Container = styled.div`
   main {
     grid-area: main;
     padding-right: 28px;
+  }
+
+  > div {
+    grid-area: notfound;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;

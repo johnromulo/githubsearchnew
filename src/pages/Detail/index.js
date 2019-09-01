@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Profile from '~/components/Profile';
 import Logo from '~/components/Logo';
 import Search from '~/components/Search';
+import Notfound from '~/components/NoFound';
 
 import { profileRequest } from '~/store/modules/profile/actions';
 import { repositoriesResetState } from '~/store/modules/repository/actions';
@@ -15,6 +16,7 @@ export default function Detail({ match, history, children }) {
   const dispatch = useDispatch();
 
   const profile = useSelector(state => state.profile.data);
+  const error = useSelector(state => state.profile.error);
 
   const [username, setUsername] = useState('');
 
@@ -44,10 +46,18 @@ export default function Detail({ match, history, children }) {
           setUsername={setUsername}
         />
       </header>
-      <aside>
-        <Profile profile={profile} />
-      </aside>
-      <main>{children}</main>
+      {!error ? (
+        <>
+          <aside>
+            <Profile profile={profile} />
+          </aside>
+          <main>{children}</main>
+        </>
+      ) : (
+        <div>
+          <Notfound />
+        </div>
+      )}
     </Container>
   );
 }
