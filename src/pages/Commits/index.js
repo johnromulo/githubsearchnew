@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import Image from '~/components/Image';
 import Loading from '~/components/Loading';
+import Commit from '~/components/Commit';
 import {
   commitsRequest,
   commitsResetState,
@@ -39,19 +39,7 @@ export default function Commits({ match }) {
         loader={<Loading key={0} loading />}
       >
         {commits.map(cmt => (
-          <article key={cmt.sha}>
-            <Image
-              src={
-                cmt.author && cmt.author.avatar_url
-                  ? cmt.author.avatar_url
-                  : 'nouser'
-              }
-              alt={cmt.author && cmt.author.login ? cmt.author.login : 'nouser'}
-            />
-            <p>{cmt.commit.message}</p>
-            <h1>{cmt.commit.author.name}</h1>
-            <span>{cmt.commit.author.date}</span>
-          </article>
+          <Commit key={cmt.sha} cmt={cmt} />
         ))}
       </InfiniteScroll>
     </Container>
