@@ -4,11 +4,12 @@ export const Container = styled.div`
   flex: 1;
   display: grid;
   grid-gap: 40px;
+  padding: 28px;
   grid-template-columns: 0.5fr 2fr;
   grid-template-areas:
     'header header'
     'aside main'
-    'notfound  notfound';
+    'notfound notfound';
   margin-bottom: 40px;
 
   header {
@@ -21,12 +22,12 @@ export const Container = styled.div`
 
   aside {
     grid-area: aside;
-    padding-left: 28px;
+    display: flex;
   }
 
   main {
     grid-area: main;
-    padding-right: 28px;
+    display: flex;
   }
 
   > div {
@@ -34,5 +35,19 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    flex: 1;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'aside'
+      'main'
+      'notfound';
+
+    header {
+      flex-direction: column;
+    }
   }
 `;

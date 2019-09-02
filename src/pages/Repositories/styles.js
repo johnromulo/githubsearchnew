@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  flex: 1;
+
   > div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    flex: 1;
 
     > div {
       grid-column-start: 1;
@@ -46,6 +50,17 @@ export const Container = styled.div`
       svg {
         color: #fff;
         margin-right: 7px;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    > div {
+      grid-template-columns: 1fr;
+
+      > div {
+        grid-column-start: 1;
+        grid-column-end: 1;
       }
     }
   }
