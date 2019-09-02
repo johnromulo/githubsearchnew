@@ -11,7 +11,7 @@ export const Container = styled.div`
       align-items: center;
 
       input {
-        margin: 0 20px;
+        margin: 20px;
         width: 235px;
         padding: 10px;
         background: #283042;
@@ -31,16 +31,6 @@ export const Container = styled.div`
 
         ::placeholder {
           font-weight: bold;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 900px) {
-    form {
-      div {
-        input {
-          margin: 20px;
         }
       }
     }

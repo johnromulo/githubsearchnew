@@ -4,7 +4,7 @@ export const Container = styled.div`
   flex: 1;
   display: grid;
   grid-gap: 40px;
-  padding: 28px;
+  padding: 0 28px;
   grid-template-columns: 0.5fr 2fr;
   grid-template-areas:
     'header header'
@@ -48,6 +48,7 @@ export const Container = styled.div`
 
     header {
       flex-direction: column;
+      padding: 28px;
     }
   }
 `;
