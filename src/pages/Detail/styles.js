@@ -22,7 +22,6 @@ export const Container = styled.div`
 
   aside {
     grid-area: aside;
-    display: flex;
   }
 
   main {
@@ -48,7 +47,7 @@ export const Container = styled.div`
 
     header {
       flex-direction: column;
-      padding: 28px;
+      padding: 28px 0;
     }
   }
 `;
