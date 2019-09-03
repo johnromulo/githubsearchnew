@@ -23,7 +23,7 @@ export const Container = styled.article`
     border-radius: 50%;
     position: absolute;
     top: -25px;
-    background: #fff;
+    background: #ff3366;
   }
 
   p {

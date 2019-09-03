@@ -24,7 +24,7 @@ export const Container = styled.div`
         &:focus {
           box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.2);
           border-color: #283042;
-          width: 315px;
+          width: 270px;
           padding: 12px;
           background: #fff;
         }

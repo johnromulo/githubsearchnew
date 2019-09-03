@@ -34,6 +34,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
   }
 
   @media (max-width: 900px) {
